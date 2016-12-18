@@ -83,9 +83,9 @@
   <br />
   {% endif %}
 
-  <textarea style="display:none;" id="document" name="document"></textarea>
-  <input type="hidden" id="jsonDocument" value='{{ docString }}'>
-  <div id="containerId" name="containerId" readonly=false style="width: 1150px; height: 400px;"></div>
+  <textarea style="display:none;" id="document" name="document">{{ docString }}</textarea>
+  <div id="containerId" name="containerId" readonly=false style="width: 1150px; height: 400px;">
+  </div>
 
   <script>
         // create the editor 
@@ -93,7 +93,7 @@
         var options = {};
         editor = new JSONEditor(container, options);
     
-        var jsonString = document.getElementById("jsonDocument").value;
+        var jsonString = document.getElementById("document").value;
         console.log(jsonString);
         // set json 
         var json = JSON.parse(jsonString);
@@ -163,7 +163,7 @@
     }
  return false;
   }
-  */ 
+  
 
   function onSubmitClick() {
     // Save button is clicked
